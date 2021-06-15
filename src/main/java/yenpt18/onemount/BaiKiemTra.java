@@ -1,12 +1,11 @@
 package yenpt18.onemount;
 
 import java.util.Scanner;
-
+import java.util.InputMismatchException;
 public class BaiKiemTra {
     public static void main(String agrs[]) {
-/*
         String name = bai1("You Only Live Once. But if You do it right. once is Enough");
-        System.out.println("Tên sau khi biến đổi là: " + name);*/
+        System.out.println("Tên sau khi biến đổi là: " + name);
         bai2();
         bai3();
     }
@@ -38,10 +37,13 @@ public class BaiKiemTra {
         String pw = sc.nextLine();
         if (pw.length()<10){
             System.out.println("Pw yếu");
-        }else if(!pw.matches("/[A-Z]/") || !pw.matches("/[0-9]/") || !pw.matches("[@$!%*?&]")){
-            System.out.println("Mk chưa đủ mạnh");
-        } else if (pw.matches("^(?=.*[a-z])(?=.*[A-Z])(/[0-9]/)(?=.[!@#\\$%\\^&]){10,}")) {
-            System.out.println("Pw mạnh");
+        }
+        else{
+            if (pw.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$")) {
+                System.out.println("Pw mạnh");
+            }else System.out.println("MK chưa đủ mạnh");
+
+
         }
 
     }
@@ -74,10 +76,10 @@ public class BaiKiemTra {
                     System.out.println("Tháng " + month+" không tồn tại");
 
             }
-        } catch (Exception e)
-        {
-            System.out.println("lỗi"+ e.getMessage());
+        } catch (InputMismatchException e){
+            System.out.println("Tháng phải là 1 số");
         }
+
     }
 
 }

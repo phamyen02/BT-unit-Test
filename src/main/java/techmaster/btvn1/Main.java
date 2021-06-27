@@ -2,7 +2,7 @@ package techmaster.btvn1;
 
 public class Main {
     public  static void main(String agrs[]) {
-        CountCountry count = new CountCountry();
+        HomeWork count = new HomeWork();
         count.bai1();
     }
 }

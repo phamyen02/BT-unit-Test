@@ -2,7 +2,7 @@ package techmaster.btvn1;
 
 import java.util.*;
 
-public class CountCountry {
+public class HomeWork {
     public void bai1() {
         Person p = new Person();
         ArrayList<Person> people = p.addPeople();

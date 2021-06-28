@@ -71,13 +71,13 @@ public class HomeWork {
         System.out.println("1.3 Tính trung bình tuổi của người theo từng quốc gia");
         System.out.println("List người theo từng quốc tịch là:");
         for (Map.Entry<String, List<Person>> entry : countPeople.entrySet()) {
-          //  System.out.println(entry.getKey() + ": " + entry.getValue());
+            //  System.out.println(entry.getKey() + ": " + entry.getValue());
             double sum = 0;
             for (Person person : entry.getValue()) {
                 sum += person.age;
             }
             double avg = sum / (entry.getValue().size());
-            System.out.println(entry.getKey() + ": "+"Tuoi trung bình: " + avg);
+            System.out.println(entry.getKey() + ": " + "Tuoi trung bình: " + avg);
         }
 
     }

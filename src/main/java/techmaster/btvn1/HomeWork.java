@@ -76,7 +76,8 @@ public class HomeWork {
             for (Person person : entry.getValue()) {
                 sum += person.age;
             }
-            double avg = sum / (entry.getValue().size());
+            double avg = 10*sum / (entry.getValue().size());
+            avg = (int) avg/10.0;
             System.out.println(entry.getKey() + ": " + "Tuoi trung bình: " + avg);
         }
 

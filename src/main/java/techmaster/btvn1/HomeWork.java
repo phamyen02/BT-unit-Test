@@ -1,6 +1,7 @@
 package techmaster.btvn1;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class HomeWork {
     public void bai1() {
@@ -37,14 +38,48 @@ public class HomeWork {
         System.out.println("1.4 In ra màn hình đánh giá tuổi mỗi người");
         for (Person p1 : people) {
             if (p1.age < 20) {
-                System.out.println(p1 + "-"+ "nổi loạn");
-            }if (p1.age >=20 && p1.age <=30){
-                System.out.println(p1 + "-"+ "việc làm");
-            }if (p1.age >31 && p1.age <=40){
-                System.out.println(p1 + "-"+ "sự nghiệp");
-            }else {
-                System.out.println(p1 + "-"+ "hưởng thụ");
+                System.out.println(p1 + "-" + "nổi loạn");
+            }
+            if (p1.age >= 20 && p1.age <= 30) {
+                System.out.println(p1 + "-" + "việc làm");
+            }
+            if (p1.age > 31 && p1.age <= 40) {
+                System.out.println(p1 + "-" + "sự nghiệp");
+            } else {
+                System.out.println(p1 + "-" + "hưởng thụ");
             }
         }
+
     }
+
+    public void bai2() {
+        Person p = new Person();
+        ArrayList<Person> people = p.addPeople();
+        HashMap<String, List<Person>> countPeople = new HashMap<>();
+        for (Person person : people) {
+            List<Person> count = countPeople.get(person.getNationality());
+            List<Person> p1 = new ArrayList<>();
+            if (count == null) {
+                p1.add(person);
+                countPeople.put(person.getNationality(), p1);
+            } else {
+                count.add(person);
+                countPeople.put(person.getNationality(), count);
+            }
+
+        }
+        System.out.println("1.3 Tính trung bình tuổi của người theo từng quốc gia");
+        System.out.println("List người theo từng quốc tịch là:");
+        for (Map.Entry<String, List<Person>> entry : countPeople.entrySet()) {
+          //  System.out.println(entry.getKey() + ": " + entry.getValue());
+            double sum = 0;
+            for (Person person : entry.getValue()) {
+                sum += person.age;
+            }
+            double avg = sum / (entry.getValue().size());
+            System.out.println(entry.getKey() + ": "+"Tuoi trung bình: " + avg);
+        }
+
+    }
+
 }

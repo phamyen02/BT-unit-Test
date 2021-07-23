@@ -20,7 +20,6 @@ import java.util.Set;
  * •The convertMapToSet method must create and return the set of cats retrieved from the passed map.
  * •The program must display name and age each cats in the set.
  */
-
 public class Task2 {
     private String name;
     private int age;

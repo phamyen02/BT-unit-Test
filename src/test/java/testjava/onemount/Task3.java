@@ -3,8 +3,8 @@ package testjava.onemount;
 import java.util.Scanner;
 
 public class Task3 {
-    String s = "";
 
+    String s = "";
     public String readString() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your text: ");

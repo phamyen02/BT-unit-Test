@@ -19,8 +19,6 @@ import java.util.Scanner;
  * •The main() method should call the getMinimum() method.
  */
 public class Task4 {
-
-
     public List<Integer> getIntegerList() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter n: ");
